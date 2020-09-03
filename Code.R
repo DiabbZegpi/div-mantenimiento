@@ -22,7 +22,7 @@ for(NSIM in 1:100){ # 100 simulaciones
 }
 
 simuls <- data.frame(NSIM = 1:100,
-                     round(DOWNT, 1),
+                     DOWNT = round(DOWNT, 1),
                      repairs)
 
 write.csv(x = simuls, file = "simuls.csv", row.names = FALSE)
