@@ -14,7 +14,7 @@ for(NSIM in 1:100){ # 100 simulaciones
 
   while(SIMTIM[NSIM] <= 2500){
     DOWNT[NSIM] <- DOWNT[NSIM] + component_repair
-    component_failure <- rexp(n = 1, rate = 1/500)
+    component_failure <- rexp(n = 1, rate = 1 / 500)
     SIMTIM[NSIM] <- SIMTIM[NSIM] + DOWNT[NSIM] + component_failure
     component_repair <- rnorm(n = 1, mean = 25, sd = 5)
     if(SIMTIM[NSIM] <= 2500) repairs[NSIM] <- repairs[NSIM] + 1
@@ -26,4 +26,4 @@ simuls <- data.frame(NSIM = 1:100,
                      pct_downtime = round(DOWNT, 1) / 2500,
                      repairs)
 
-write.csv(x = simuls, file = "simuls.csv", row.names = FALSE)
+write.csv(x = simuls, file = "data_ejercicio1.csv", row.names = FALSE)
