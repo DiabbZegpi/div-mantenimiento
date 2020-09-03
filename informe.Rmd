@@ -1,13 +1,13 @@
 ---
 title: "Informe de Simulación Monte Carlo"
-author: "Diabb Zegpi"
+author: "Diabb Zegpi Delgado"
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-Para resolver ambos ejercicios, se corrieron 100 simulaciones independientes por caso. En el **primer ejercicio**, se pide el *procentaje de inactividad (o tiempo muerto) en 2500 horas*, que por ser una variable aleatoria, se muestra su distribución de probabilidad simulada (`Ejercicio 1`). En el **segundo ejercicio**, se obtuvo la distribución de probabilidad simulada del *tiempo de falla del sistema* (`Ejercicio 2`).
+Para resolver ambos ejercicios, se corrieron 100 simulaciones independientes por caso. En el **primer ejercicio**, se pide el *porcentaje de inactividad (o tiempo muerto) en 2500 horas*, que por ser una variable aleatoria, se muestra su distribución de probabilidad simulada (`Ejercicio 1`). En el **segundo ejercicio**, se obtuvo la distribución de probabilidad simulada del *tiempo de falla del sistema* (`Ejercicio 2`).
 
 ```{r message=FALSE, results='hide', echo=FALSE}
 library(ggplot2)
@@ -42,9 +42,9 @@ p2 <- ggplot(data = ejercicio2, aes(x = system_failure_time)) +
 ```{r echo=FALSE, }
 p1 + p2
 ```
-En `Ejercicio 1` se observa que $%inactividad \sim N(\mu,\sigma^2)$, porque el tiempo muerto, usado para reparar al componente que falla, está distribuido normalmente. 
+En `Ejercicio 1` se observa que $\%inactividad \sim N(\mu,\sigma^2)$, porque el tiempo muerto, usado para reparar al componente que falla, está distribuido normalmente. 
 
-Existe un factor de amplificación que transforma la distribución del *tiempo del proceso de reparación* en la distribución simulada de *procentaje de inactividad*, con $\bar{x}=4,4%$ y $S=1,7%$.
+Existe un factor de amplificación que transforma la distribución del *tiempo del proceso de reparación* en la distribución simulada de *porcentaje de inactividad*, con $\bar{x}=4,4\%$ y $s=1,7\%$.
 
 En `Ejercicio 2`, el producto de 100 simulaciones es otra distribución exponencial. El 90% de las veces el sistema falló en 726,3 horas o menos; el 50% en menos de 286 horas.
 
