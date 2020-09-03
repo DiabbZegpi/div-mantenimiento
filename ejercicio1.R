@@ -11,7 +11,7 @@ for(NSIM in 1:100){ # 100 simulaciones
   DOWNT[NSIM] <- 0 # Inicialización de downtime
   component_repair <- 0
   repairs[NSIM] <- 0
-
+  
   while(SIMTIM[NSIM] <= 2500){
     DOWNT[NSIM] <- DOWNT[NSIM] + component_repair
     component_failure <- rexp(n = 1, rate = 1 / 500)
